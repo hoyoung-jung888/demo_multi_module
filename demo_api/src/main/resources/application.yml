@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: admin
+    driver-class-name: org.h2.Driver
+    schema: classpath*:db/schema.sql
+    data: classpath*:db/data.sql
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+  h2:
+    console:
+      enabled: true
